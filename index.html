@@ -41,15 +41,17 @@
         <p class="text-[11px] text-gray-500">Smart IT Solutions — Web, Cloud & Growth</p>
       </div>
     </div>
-    <button id="menu-btn" class="md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-    <nav id="menu" class="hidden md:flex gap-6 text-sm">
+    <button id="menuBtn" class="md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <nav class="hidden md:flex gap-6 text-sm">
       <a href="#home" class="hover:text-blue-600">Home</a>
       <a href="#services" class="hover:text-blue-600">Services</a>
       <a href="#founders" class="hover:text-blue-600">Founders</a>
       <a href="#contact" class="hover:text-blue-600">Contact</a>
     </nav>
   </div>
-  <div id="mobile" class="hidden flex-col items-center bg-white text-sm py-3 space-y-2 md:hidden">
+  <div id="mobileMenu" class="hidden flex-col items-center bg-white text-sm py-3 space-y-2 md:hidden">
     <a href="#home" class="hover:text-blue-600">Home</a>
     <a href="#services" class="hover:text-blue-600">Services</a>
     <a href="#founders" class="hover:text-blue-600">Founders</a>
@@ -57,8 +59,10 @@
   </div>
 </header>
 <script>
-menu-btn.onclick=()=>mobile.classList.toggle('hidden')
+document.getElementById("menuBtn").onclick = () => 
+  document.getElementById("mobileMenu").classList.toggle("hidden");
 </script>
+
 
 
 <main id="home" class="pt-24">
