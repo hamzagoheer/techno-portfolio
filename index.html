@@ -44,24 +44,50 @@
     <button id="menuBtn" class="md:hidden">
       <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
-    <nav class="hidden md:flex gap-6 text-sm">
-      <a href="#home" class="hover:text-blue-600">Home</a>
-      <a href="#services" class="hover:text-blue-600">Services</a>
-      <a href="#founders" class="hover:text-blue-600">Founders</a>
-      <a href="#contact" class="hover:text-blue-600">Contact</a>
+    <nav class="hidden md:flex gap-4 text-sm">
+      <a href="#home" class="border px-3 py-1 rounded hover:bg-blue-50 hover:text-blue-600 transition">Home</a>
+      <a href="#services" class="border px-3 py-1 rounded hover:bg-blue-50 hover:text-blue-600 transition">Services</a>
+      <a href="#founders" class="border px-3 py-1 rounded hover:bg-blue-50 hover:text-blue-600 transition">Founders</a>
+      <a href="#contact" class="border px-3 py-1 rounded hover:bg-blue-50 hover:text-blue-600 transition">Contact</a>
     </nav>
   </div>
-  <div id="mobileMenu" class="hidden flex-col items-center bg-white text-sm py-3 space-y-2 md:hidden">
-    <a href="#home" class="hover:text-blue-600">Home</a>
-    <a href="#services" class="hover:text-blue-600">Services</a>
-    <a href="#founders" class="hover:text-blue-600">Founders</a>
-    <a href="#contact" class="hover:text-blue-600">Contact</a>
+
+  <div id="mobileMenu" class="hidden flex-col items-center bg-white text-sm py-3 md:hidden">
+    <a href="#home" class="menu-item border w-3/4 text-center py-2 rounded mt-1">Home</a>
+    <a href="#services" class="menu-item border w-3/4 text-center py-2 rounded mt-1">Services</a>
+    <a href="#founders" class="menu-item border w-3/4 text-center py-2 rounded mt-1">Founders</a>
+    <a href="#contact" class="menu-item border w-3/4 text-center py-2 rounded mt-1">Contact</a>
   </div>
 </header>
+
+<style>
+.menu-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+.menu-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+
 <script>
-document.getElementById("menuBtn").onclick = () => 
-  document.getElementById("mobileMenu").classList.toggle("hidden");
+const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+const items = menu.querySelectorAll(".menu-item");
+btn.onclick = () => {
+  menu.classList.toggle("hidden");
+  if (!menu.classList.contains("hidden")) {
+    items.forEach((item, i) => {
+      setTimeout(() => item.classList.add("show"), i * 100);
+    });
+  } else {
+    items.forEach(item => item.classList.remove("show"));
+  }
+};
 </script>
+
 
 
 
