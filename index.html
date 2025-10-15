@@ -32,34 +32,32 @@
   </div>
 </header> -->
 
-  <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 shadow-sm">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-3">
+  <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur z-50 shadow-sm">
+  <div class="flex justify-between items-center px-5 py-3 max-w-6xl mx-auto">
     <div class="flex items-center gap-3">
-      <img src="assets/logo_monogram.svg" alt="Techno ConslT" class="w-10 h-10">
+      <img src="assets/logo_monogram.svg" class="w-10 h-10" alt="">
       <div>
-        <h1 class="text-lg md:text-xl font-bold text-blue-700 leading-tight">Techno ConslT</h1>
-        <p class="text-[11px] md:text-xs text-gray-500">Smart IT Solutions — Web, Cloud & Growth</p>
+        <h1 class="text-lg font-bold text-blue-700">Techno ConslT</h1>
+        <p class="text-[11px] text-gray-500">Smart IT Solutions — Web, Cloud & Growth</p>
       </div>
     </div>
-    <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-    <nav id="menu" class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-700">
+    <button id="menu-btn" class="md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <nav id="menu" class="hidden md:flex gap-6 text-sm">
       <a href="#home" class="hover:text-blue-600">Home</a>
       <a href="#services" class="hover:text-blue-600">Services</a>
       <a href="#founders" class="hover:text-blue-600">Founders</a>
       <a href="#contact" class="hover:text-blue-600">Contact</a>
     </nav>
   </div>
-  <nav id="mobile-menu" class="hidden md:hidden flex-col items-center bg-white/95 border-t border-gray-200 text-sm font-medium text-gray-700">
-    <a href="#home" class="py-2 hover:text-blue-600">Home</a>
-    <a href="#services" class="py-2 hover:text-blue-600">Services</a>
-    <a href="#founders" class="py-2 hover:text-blue-600">Founders</a>
-    <a href="#contact" class="py-2 hover:text-blue-600">Contact</a>
-  </nav>
+  <div id="mobile" class="hidden flex-col items-center bg-white text-sm py-3 space-y-2 md:hidden">
+    <a href="#home" class="hover:text-blue-600">Home</a>
+    <a href="#services" class="hover:text-blue-600">Services</a>
+    <a href="#founders" class="hover:text-blue-600">Founders</a>
+    <a href="#contact" class="hover:text-blue-600">Contact</a>
+  </div>
 </header>
 <script>
-document.getElementById("menu-btn").onclick=()=>document.getElementById("mobile-menu").classList.toggle("hidden");
+menu-btn.onclick=()=>mobile.classList.toggle('hidden')
 </script>
 
 
